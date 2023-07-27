@@ -1,0 +1,330 @@
+/* CONFIGURACIONES GENERALES */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@1,300&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    background-color: #333;
+    font-family: "Public Sans", sans-serif;
+    font-size: 0.8rem;
+    min-height: 100%;
+    color: white;
+}
+
+.grid-container > *{
+    box-shadow: -1px 1px  7px 0px rgba(0,0,0,0.75);
+    border-radius: 10px;
+    padding: 10px; /*Arriba y abajo*/
+    text-align: center;
+    justify-content: center;
+}
+
+
+/* CONFIGURACION PARA MOVIL */
+.grid-container{
+    display: grid;
+    gap: 10px;
+/* Definimos alto de las filas */
+    grid-template: 
+    "header"  290px
+    "navbar"  auto
+    "main"    330px
+    "sidebar" auto
+    "footer"  300px;     
+}
+/* ---------------------------------------------------------------------------- */
+
+/* HEADER */
+.header{
+    grid-area: header;
+    background-color:black;  
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-content:space-evenly;
+}
+
+.header img{
+    width: 200px;
+    height: 200px;
+}
+
+.header h1{
+    color: white;
+    align-self: center;
+}
+
+/* #banner-titulo{
+    width:400px;
+} */
+
+
+/* NAVBAR */
+.navbar{
+    grid-area: navbar;
+    background-color: #581845; 
+    color: white;
+}
+
+.navbar-collapse{
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* MAIN */
+.main{
+    grid-area: main;
+    background-color:pink;
+}
+
+.container{
+    /* width: 100%;
+    height: 100%; */
+    display:flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;    
+}
+
+/* CONFIG IMAGENES */
+/* .d-block{
+    max-width:200px;   
+    max-height: 300px; 
+} */
+.oneimg{
+    max-width: 250px;
+    max-height: 310px;
+}
+
+.twoimg{
+    max-width: 310px;
+} 
+
+.threeimg{
+    max-width: 550px;
+    /* max-height: 600px; */
+}
+
+/* ------------------------- */
+.sidebar img{
+    max-width: 200px;
+}
+
+.list-group{
+    max-width: 200px;
+}
+
+/* SIDEBAR */
+.sidebar{
+    grid-area: sidebar;
+    display:flex;
+    flex-direction: column;       
+    background-color: #581845;   
+    align-items: center;
+}
+
+.list-group li{
+    background-color:  #581845;
+    color: white;    
+}
+
+.list-group a{
+    text-decoration: none;
+}
+
+.list-group li:hover{
+    background-color: blanchedalmond;
+    color: black;
+}
+
+/* FOOTER */
+.footer{
+    grid-area: footer;
+    background-color: black;
+    display:grid;
+    grid-template-rows:repeat(2,1fr);
+    /* grid-template-columns:repeat(4,1fr); */
+    align-items: center;
+    justify-items: center;            
+    place-content:center;		
+    color:white;
+    font-size:14px;
+    font-family:sans-serif, arial, verdana;
+}     
+
+#redes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#redes img{
+    width:40px;
+    height:40px;
+}       
+
+#formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 5px;
+}     
+
+#email{
+    width: 250px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px
+}
+
+#btn{
+    width: 100px;
+}
+
+.menu-texto a{
+    color: white;            
+}
+
+.menu-texto a:active{
+    color: purple
+}
+
+/* .menu-texto a:visited{
+    
+} */
+
+p{
+    display: flex;
+    display: inline-block; 
+    justify-content: space-between;           
+}
+
+h2{
+    font-family: 'Belanosima', sans-serif;           
+}
+
+/* --------------------------------- MEDIA QUERY ---------------------------------- */
+
+/* PARA TABLET */
+
+@media screen and (max-width:767px){
+    .navbar-brand{
+        display: none;
+    }
+}
+
+@media(min-width:600px){
+    body{
+        padding: 0.8% 0.5% 0.8% 0.5%;
+    }
+    .grid-container{    
+        /* Forma más resumida y elegante(lo mismo de arriba) */
+        grid-template: 
+        /* Definimos número de columnas y alto de cada fila */
+        "header header"  280px
+        "navbar navbar"  auto
+        "main  sidebar"  auto
+        "footer footer"  300px /
+         auto  200px; /*Aquí definimos el aancho de las 2 columnas*/
+    }
+
+    .header{
+        /* font-size: 0.8rem; */
+        justify-content: space-evenly;
+    }
+
+    .header h1{
+        align-self: center;
+    }
+   /* CONFIG IMAGENES */
+    .d-block{
+        max-width: 330px;
+    }   
+    
+    .sidebar{
+        justify-content: space-evenly;
+    }
+    
+    form{
+        display: flex;     
+        flex-direction: row;   
+        align-items: center;
+        gap:15px
+    }
+    
+    
+        /* .oneimg{
+        max-height: 550px;
+    } */
+    
+    /* .threeimg{
+        max-width: 200px;
+    } */
+   
+}
+
+
+@media(min-width:700px){
+    .header{
+        font-size: 0.9rem;
+    }
+}
+
+
+/* PARA DESKTOP */
+
+@media(min-width:900px){
+    body{
+        padding: 0.4% 5% 0.4%;
+    }
+    .grid-container{
+        grid-template: 
+        "header header header" 250px
+        "navbar navbar navbar" auto
+        "main   main  sidebar" auto
+        "footer footer footer" 250px /
+        200px   auto    200px;
+    }
+    /* HEADER */
+    .header{
+        justify-content: space-evenly;
+        font-size: 1rem;
+    }
+
+    /* MAIN */
+    .carousel-item{
+        max-height: 450px;
+    }  
+   
+    .container{
+        background-size: contain;
+    }
+    /* CONFIG IMAGENES */
+    .oneimg{
+        max-width: 600px;
+        max-height: 600px;
+    }
+
+    .twoimg{
+        max-width: 450px;
+    } 
+    
+    .threeimg{
+        max-width: 800px;
+    }
+}
